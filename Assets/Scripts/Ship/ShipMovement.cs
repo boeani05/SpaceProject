@@ -9,13 +9,7 @@ public class ShipMovement : MonoBehaviour
     private float verticalInput;
     private bool isFacingRight;
     private bool isFacingUp;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalInput = GetHorizontalAxis();
@@ -24,7 +18,7 @@ public class ShipMovement : MonoBehaviour
         Flip();
     }
 
-        private float GetHorizontalAxis()
+    private float GetHorizontalAxis()
     {
         return Input.GetAxisRaw("Horizontal");
     }
