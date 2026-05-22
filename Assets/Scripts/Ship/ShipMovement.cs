@@ -12,76 +12,47 @@ public class ShipMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = GetHorizontalAxis();
-        verticalInput = GetVerticalAxis();
-
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
         Flip();
-    }
-
-    private float GetHorizontalAxis()
-    {
-        return Input.GetAxisRaw("Horizontal");
-    }
-
-    private float GetVerticalAxis()
-    {
-        return Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
     {
-        rigidbody.linearVelocity = SetLinearVelocityOfRigidbody();
+        rigidbody.linearVelocity = new Vector2(horizontalInput, verticalInput).normalized * movementSpeed;
     }
 
     private void Flip()
     {
-        FlipHorizontallyIfNeeded();
+        if (ShouldFlip(isFacingRight, horizontalInput))
+        {
+            isFacingRight = !isFacingRight;
+            FlipAxis(horizontal: true);
+        }
 
-        FlipVerticallyIfNeeded();
+        if (ShouldFlip(isFacingUp, verticalInput))
+        {
+            isFacingUp = !isFacingUp;
+            FlipAxis(horizontal: false);
+        }
     }
 
-    private void FlipHorizontallyIfNeeded()
+    private bool ShouldFlip(bool isFacingPositiveDirection, float input)
     {
-        if (!ShouldFlip(isFacingRight, horizontalInput)) return;
-
-        isFacingRight = !isFacingRight;
-
-        FlipX();
+        return (isFacingPositiveDirection && input < 0) || (!isFacingPositiveDirection && input > 0);
     }
 
-    private void FlipVerticallyIfNeeded()
-    {
-        if (!ShouldFlip(isFacingUp, verticalInput)) return;
-
-        isFacingUp = !isFacingUp;
-
-        FlipY();
-    }
-
-    private bool ShouldFlip(bool isFacingPositiveDirection, float directionalInput)
-    {
-        return isFacingPositiveDirection && directionalInput < 0 ||
-               !isFacingPositiveDirection && directionalInput > 0;
-    }
-
-    private void FlipX()
+    private void FlipAxis(bool horizontal)
     {
         Vector3 scale = transform.localScale;
-        scale.x *= -1;
-
+        if (horizontal)
+        {
+            scale.x *= -1;
+        }
+        else
+        {
+            scale.y *= -1;
+        }
         transform.localScale = scale;
-    }
-
-    private void FlipY()
-    {
-        Vector3 scale = transform.localScale;
-        scale.y *= -1;
-
-        transform.localScale = scale;
-    }
-
-    private Vector2 SetLinearVelocityOfRigidbody()
-    {
-        return new Vector2(horizontalInput, verticalInput).normalized * movementSpeed;
     }
 }

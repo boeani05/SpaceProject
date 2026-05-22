@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   rigidbody2D: {fileID: 1474913607829073129}
-  speedOfProjectile: 5
+  speedOfProjectile: 30
 --- !u!50 &1474913607829073129
 Rigidbody2D:
   serializedVersion: 5
