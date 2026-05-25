@@ -1,0 +1,16 @@
+using UnityEngine;
+
+public class EnemySpawner : MonoBehaviour
+{
+    [SerializeField] private GameObject enemyPrefab;
+
+    void Awake()
+    {
+        SpawnEnemy();
+    }
+
+    private void SpawnEnemy()
+    {
+        Instantiate(enemyPrefab);
+    }
+}

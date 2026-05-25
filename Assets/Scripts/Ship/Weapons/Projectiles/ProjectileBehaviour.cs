@@ -2,15 +2,26 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
-    [SerializeField] new Rigidbody2D rigidbody2D;
     [SerializeField] float speedOfProjectile;
 
     private Camera mainCamera;
     private Vector2 direction;
+    private new Rigidbody2D rigidbody2D;
 
     void Awake()
     {
+        SetMainCamera();
+        SetRigidbody2D();
+    }
+
+    private void SetMainCamera()
+    {
         mainCamera = Camera.main;
+    }
+
+    private void SetRigidbody2D()
+    {
+        rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
@@ -21,13 +32,18 @@ public class ProjectileBehaviour : MonoBehaviour
 
     private void DestroyIfOutOfBounds()
     {
-        Vector2 screenPos = mainCamera.WorldToScreenPoint(transform.position);
-
-        if (screenPos.x < 0 || screenPos.x > mainCamera.pixelWidth ||
-            screenPos.y < 0 || screenPos.y > mainCamera.pixelHeight)
+        if (DidProjectileLeaveScreen())
         {
             Destroy(gameObject);
         }
+    }
+
+    private bool DidProjectileLeaveScreen()
+    {
+        Vector2 projectilePositionOnScreen = mainCamera.WorldToScreenPoint(transform.position);
+
+        return projectilePositionOnScreen.x < 0 || projectilePositionOnScreen.x > mainCamera.pixelWidth ||
+            projectilePositionOnScreen.y < 0 || projectilePositionOnScreen.y > mainCamera.pixelHeight;
     }
 
     public void SetDirection(Vector2 direction)
