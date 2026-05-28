@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
-    [SerializeField] float speedOfProjectile;
+    [SerializeField] private float speedOfProjectile;
+    [SerializeField] private int damage; 
 
     private Camera mainCamera;
     private Vector2 direction;
@@ -26,8 +27,13 @@ public class ProjectileBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidbody2D.linearVelocity = direction * speedOfProjectile;
+        ApplyMovementToProjectile();
         DestroyIfOutOfBounds();
+    }
+
+    private void ApplyMovementToProjectile()
+    {
+        rigidbody2D.linearVelocity = direction * speedOfProjectile;
     }
 
     private void DestroyIfOutOfBounds()
@@ -44,6 +50,26 @@ public class ProjectileBehaviour : MonoBehaviour
 
         return projectilePositionOnScreen.x < 0 || projectilePositionOnScreen.x > mainCamera.pixelWidth ||
             projectilePositionOnScreen.y < 0 || projectilePositionOnScreen.y > mainCamera.pixelHeight;
+    }
+
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        GameObject colliderObject = collider.gameObject;
+
+        if (colliderObject.CompareTag("Enemy"))
+        {
+            ApplyDamage(colliderObject);
+        }
+    }
+
+    private void ApplyDamage(GameObject enemy)
+    {
+        ReduceHealth(enemy.GetComponent<EnemyBehaviour>());  
+    }
+
+    private void ReduceHealth(EnemyBehaviour enemyBehaviour)
+    {
+        enemyBehaviour.SetHealth(enemyBehaviour.GetHealth() - damage);
     }
 
     public void SetDirection(Vector2 direction)

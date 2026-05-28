@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
@@ -25,15 +26,41 @@ public class EnemyBehaviour : MonoBehaviour
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    void Update()
+    {
+        if (!IsEnemyAlive())
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private bool IsEnemyAlive()
+    {
+        return health > 0.0f;
+    }
+
     void FixedUpdate()
     {
-        Vector2 directionToMove = (player.transform.position - transform.position).normalized;
-
-        MoveToPlayer(directionToMove);
+        MoveToPlayer(EvaluateDirection());
     }
 
     private void MoveToPlayer(Vector2 directionToMove)
     {
         rigidbody2D.linearVelocity = directionToMove * movementSpeed;
+    }
+
+    private Vector2 EvaluateDirection()
+    {
+        return (player.transform.position - transform.position).normalized;
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    public void SetHealth(float health)
+    {
+        this.health = health;
     }
 }
