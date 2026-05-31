@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviour
   health: 50
-  damage: 2
+  damage: 10
   movementSpeed: 2
   knockbackMultiplier: 2
 --- !u!50 &1688048218982524953

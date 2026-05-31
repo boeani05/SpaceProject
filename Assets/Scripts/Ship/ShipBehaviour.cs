@@ -8,7 +8,7 @@ public class ShipBehaviour : MonoBehaviour
     {
         if (!IsShipAlive())
         {
-            Destroy(gameObject);
+            GameManager.GameOver();
         }
     }
 
