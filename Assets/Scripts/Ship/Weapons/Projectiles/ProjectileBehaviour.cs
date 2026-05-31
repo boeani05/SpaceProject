@@ -1,9 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
     [SerializeField] private float speedOfProjectile;
-    [SerializeField] private int damage; 
+    [SerializeField] private int damage;
 
     private Camera mainCamera;
     private Vector2 direction;
@@ -52,19 +53,19 @@ public class ProjectileBehaviour : MonoBehaviour
             projectilePositionOnScreen.y < 0 || projectilePositionOnScreen.y > mainCamera.pixelHeight;
     }
 
-    void OnCollisionEnter2D(Collision2D collider)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject colliderObject = collider.gameObject;
+        GameObject collisionObject = collision.gameObject;
 
-        if (colliderObject.CompareTag("Enemy"))
+        if (collisionObject.CompareTag("Enemy"))
         {
-            ApplyDamage(colliderObject);
+            ApplyDamage(collisionObject);
         }
     }
 
     private void ApplyDamage(GameObject enemy)
     {
-        ReduceHealth(enemy.GetComponent<EnemyBehaviour>());  
+        ReduceHealth(enemy.GetComponent<EnemyBehaviour>());
     }
 
     private void ReduceHealth(EnemyBehaviour enemyBehaviour)

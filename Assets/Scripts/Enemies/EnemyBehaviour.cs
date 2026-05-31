@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
@@ -6,24 +6,42 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float damage;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float knockbackMultiplier;
 
     private GameObject player;
+
     private new Rigidbody2D rigidbody2D;
+
+    private bool isKnockbackActive;
+
+    private float knockbackForce;
 
     void Awake()
     {
-        SetPlayer();
-        SetRigidbody2D();
+        InitializePlayer();
+        InitializeRigidbody2D();
+        InitializeIsKnockbackActive();
+        InitializeKnockbackForce();
     }
 
-    private void SetPlayer()
+    private void InitializePlayer()
     {
         player = GameObject.FindWithTag("Player");
     }
 
-    private void SetRigidbody2D()
+    private void InitializeRigidbody2D()
     {
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+    }
+
+    private void InitializeIsKnockbackActive()
+    {
+        isKnockbackActive = false;
+    }
+
+    private void InitializeKnockbackForce()
+    {
+        knockbackForce = movementSpeed * knockbackMultiplier;
     }
 
     void Update()
@@ -41,7 +59,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        MoveToPlayer(EvaluateDirection());
+        if (!isKnockbackActive)
+        {
+            MoveToPlayer(EvaluateDirection());
+        }
     }
 
     private void MoveToPlayer(Vector2 directionToMove)
@@ -52,6 +73,40 @@ public class EnemyBehaviour : MonoBehaviour
     private Vector2 EvaluateDirection()
     {
         return (player.transform.position - transform.position).normalized;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collisionObject = collision.gameObject;
+
+        if (collisionObject.CompareTag("Player"))
+        {
+            ApplyDamage(collisionObject);
+        }
+    }
+
+    private void ApplyDamage(GameObject player)
+    {
+        ReduceHealth(player.GetComponent<ShipBehaviour>());
+        StartCoroutine(Knockback());
+    }
+
+    private void ReduceHealth(ShipBehaviour shipBehaviour)
+    {
+        shipBehaviour.SetHealth(shipBehaviour.GetHealth() - damage);
+    }
+
+    private IEnumerator Knockback()
+    {
+        SetIsKnockbackActive(true);
+        rigidbody2D.AddForce(-EvaluateDirection() * knockbackForce, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.2f);
+        SetIsKnockbackActive(false);
+    }
+
+    private void SetIsKnockbackActive(bool isKnockbackActive)
+    {
+        this.isKnockbackActive = isKnockbackActive;
     }
 
     public float GetHealth()
