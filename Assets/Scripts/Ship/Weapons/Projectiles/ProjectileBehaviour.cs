@@ -57,20 +57,7 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         GameObject collisionObject = collision.gameObject;
 
-        if (collisionObject.CompareTag("Enemy"))
-        {
-            ApplyDamage(collisionObject);
-        }
-    }
-
-    private void ApplyDamage(GameObject enemy)
-    {
-        ReduceHealth(enemy.GetComponent<EnemyBehaviour>());
-    }
-
-    private void ReduceHealth(EnemyBehaviour enemyBehaviour)
-    {
-        enemyBehaviour.SetHealth(enemyBehaviour.GetHealth() - damage);
+        collisionObject.GetComponent<IDamageable>()?.ApplyDamage(damage);
     }
 
     public void SetDirection(Vector2 direction)

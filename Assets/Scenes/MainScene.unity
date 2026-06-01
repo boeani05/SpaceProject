@@ -411,6 +411,10 @@ PrefabInstance:
       value: Ship
       objectReference: {fileID: 0}
     - target: {fileID: 7289196828808033482, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289196828808033482, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}

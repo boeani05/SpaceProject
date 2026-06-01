@@ -1,8 +1,13 @@
 using UnityEngine;
 
-public class ShipBehaviour : MonoBehaviour
+public class ShipBehaviour : MonoBehaviour, IDamageable
 {
     [SerializeField] private float health;
+
+    public void ApplyDamage(float damage)
+    {
+        health -= damage;
+    }
 
     void Update()
     {
@@ -15,15 +20,5 @@ public class ShipBehaviour : MonoBehaviour
     private bool IsShipAlive()
     {
         return health > 0.0f;
-    }
-
-    public float GetHealth()
-    {
-        return health;
-    }
-
-    public void SetHealth(float health)
-    {
-        this.health = health;
     }
 }

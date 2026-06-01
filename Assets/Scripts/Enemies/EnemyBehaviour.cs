@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour, IDamageable
 {
     [SerializeField] private float health;
     [SerializeField] private float damage;
@@ -15,6 +15,11 @@ public class EnemyBehaviour : MonoBehaviour
     private bool isKnockbackActive;
 
     private float knockbackForce;
+
+    public void ApplyDamage(float damage)
+    {
+        health -= damage;
+    }
 
     void Awake()
     {
@@ -79,21 +84,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         GameObject collisionObject = collision.gameObject;
 
-        if (collisionObject.CompareTag("Player"))
-        {
-            ApplyDamage(collisionObject);
-        }
-    }
+        collisionObject.GetComponent<IDamageable>()?.ApplyDamage(damage);
 
-    private void ApplyDamage(GameObject player)
-    {
-        ReduceHealth(player.GetComponent<ShipBehaviour>());
         StartCoroutine(Knockback());
-    }
-
-    private void ReduceHealth(ShipBehaviour shipBehaviour)
-    {
-        shipBehaviour.SetHealth(shipBehaviour.GetHealth() - damage);
     }
 
     private IEnumerator Knockback()
@@ -107,15 +100,5 @@ public class EnemyBehaviour : MonoBehaviour
     private void SetIsKnockbackActive(bool isKnockbackActive)
     {
         this.isKnockbackActive = isKnockbackActive;
-    }
-
-    public float GetHealth()
-    {
-        return health;
-    }
-
-    public void SetHealth(float health)
-    {
-        this.health = health;
     }
 }
