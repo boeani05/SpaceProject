@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 2432183225989282783}
   - component: {fileID: 1688048218982524953}
   - component: {fileID: 384915085854568435}
-  - component: {fileID: 1178400479209143585}
   - component: {fileID: 2958379028981645495}
   - component: {fileID: 4130793238385931438}
   - component: {fileID: 2734014136025839726}
   - component: {fileID: 2987320790545561770}
   - component: {fileID: 6529110007045122496}
+  - component: {fileID: 1981898145713648227}
+  - component: {fileID: 1323768033728762939}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -172,18 +173,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1178400479209143585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15ec5c2c21884444b875c52b49bc9234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviour
 --- !u!114 &2958379028981645495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,3 +237,27 @@ MonoBehaviour:
   knockbackMultiplier: 2
   damage: 5
   health: 50
+--- !u!114 &1981898145713648227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081970479216051085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ec5c2c21884444b875c52b49bc9234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviour
+--- !u!114 &1323768033728762939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081970479216051085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a072b1cc339a54280d573b218896c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager

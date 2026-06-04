@@ -1,7 +1,6 @@
-using System.Collections;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     private EnemyStat enemyStat;
     private EnemyKnockback enemyKnockback;
@@ -37,7 +36,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             MoveToPlayer(enemyNavigation.EvaluateDirection());
         }
-    }    
+    }
     private void MoveToPlayer(Vector2 directionToMove)
     {
         rigidbody2D.linearVelocity = directionToMove * enemyStat.GetMovementSpeed();
