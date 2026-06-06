@@ -27,13 +27,18 @@ public class FireWeaponController : MonoBehaviour, IElementaryWeapon
             Ranged();
         }
     }
-    
+
     public void Melee()
     {
-        
+
     }
 
     public void Ranged()
+    {
+        Shoot();
+    }
+
+    private void Shoot()
     {
         Vector2 currentMousePosition = CalculateMousePosition();
         StartCoroutine(FireSequence(currentMousePosition));
@@ -58,11 +63,11 @@ public class FireWeaponController : MonoBehaviour, IElementaryWeapon
     }
     public void Ultimate()
     {
-        
+
     }
 
     public void CombineWithElementaryWeapon(IElementaryWeapon elementaryWeapon)
     {
-        
+
     }
 }

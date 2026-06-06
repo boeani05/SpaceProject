@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-    private EnemyStat enemyStat;
+    private IDamageSource damageSource;
     private EnemyKnockback enemyKnockback;
 
     void Awake()
     {
-        InitializeEnemyStat();
+        InitializeDamageSource();
         InitializeEnemyKnockback();
     }
-    private void InitializeEnemyStat()
+    private void InitializeDamageSource()
     {
-        enemyStat = gameObject.GetComponent<EnemyStat>();
+        damageSource = gameObject.GetComponent<IDamageSource>();
     }
     private void InitializeEnemyKnockback()
     {
@@ -21,10 +21,7 @@ public class EnemyCombat : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject collisionObject = collision.gameObject;
-
-        collisionObject.GetComponent<IDamageable>()?.ApplyDamage(enemyStat.GetDamage());
-
+        collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(damageSource.GetDamage());
         StartCoroutine(enemyKnockback.TriggerKnockback());
     }
 }

@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class EnemyKnockback : MonoBehaviour
 {
-    private EnemyStat enemyStat;
+    private EnemyKnockbackStats enemyKnockbackStats;
+    private EnemyMovementStats enemyMovementStats;
     private bool isKnockbackActive;
     private float knockbackForce;
     private new Rigidbody2D rigidbody2D;
@@ -11,16 +12,23 @@ public class EnemyKnockback : MonoBehaviour
 
     void Awake()
     {
-        InitializeEnemyStat();
+        InitializeEnemyKnockbackStats();
+        InitializeEnemyMovementStats();
         InitializeRigidbody2D();
         InitializeIsKnockbackActive();
         InitializeKnockbackForce();
         InitializeEnemyNavigation();
     }
-    private void InitializeEnemyStat()
+    private void InitializeEnemyKnockbackStats()
     {
-        enemyStat = gameObject.GetComponent<EnemyStat>();
+        enemyKnockbackStats = gameObject.GetComponent<EnemyKnockbackStats>();
     }
+
+    private void InitializeEnemyMovementStats()
+    {
+        enemyMovementStats = gameObject.GetComponent<EnemyMovementStats>();
+    }
+
     private void InitializeRigidbody2D()
     {
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
@@ -31,7 +39,7 @@ public class EnemyKnockback : MonoBehaviour
     }
     private void InitializeKnockbackForce()
     {
-        knockbackForce = enemyStat.GetMovementSpeed() * enemyStat.GetKnockbackMultiplier();
+        knockbackForce = enemyMovementStats.GetMovementSpeed() * enemyKnockbackStats.GetKnockbackMultiplier();
     }
     private void InitializeEnemyNavigation()
     {

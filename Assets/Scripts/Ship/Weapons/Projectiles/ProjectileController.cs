@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProjectileController : MonoBehaviour
+public abstract class ProjectileController : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float offsetInPercent;
@@ -17,15 +17,7 @@ public class ProjectileController : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Shoot();
-        }
-    }
-
-    public void Shoot()
+    public virtual void Shoot()
     {
         Vector2 direction = CalculateShootingDirection();
         Vector2 spawnPosition = CalculateProjectileSpawningPosition(direction);
@@ -51,6 +43,6 @@ public class ProjectileController : MonoBehaviour
 
     private void InitializeProjectile(GameObject projectile, Vector2 direction)
     {
-        projectile.GetComponent<ProjectileBehaviour>().SetDirection(direction);
+        projectile.GetComponent<IProjectile>().SetDirection(direction);
     }
 }

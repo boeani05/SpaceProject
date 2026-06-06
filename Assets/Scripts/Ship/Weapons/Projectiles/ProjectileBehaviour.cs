@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ProjectileBehaviour : MonoBehaviour
+public abstract class ProjectileBehaviour : MonoBehaviour, IProjectile
 {
     [SerializeField] private float speedOfProjectile;
     [SerializeField] private int damage;
@@ -10,7 +9,7 @@ public class ProjectileBehaviour : MonoBehaviour
     private Vector2 direction;
     private new Rigidbody2D rigidbody2D;
 
-    void Awake()
+    protected void Awake()
     {
         SetMainCamera();
         SetRigidbody2D();
@@ -53,11 +52,9 @@ public class ProjectileBehaviour : MonoBehaviour
             projectilePositionOnScreen.y < 0 || projectilePositionOnScreen.y > mainCamera.pixelHeight;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject collisionObject = collision.gameObject;
-
-        collisionObject.GetComponent<IDamageable>()?.ApplyDamage(damage);
+        collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(damage);
     }
 
     public void SetDirection(Vector2 direction)

@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IDamageable, IDeath
 {
     public Action OnDeath;
-    private EnemyStat enemyStat;
+    private EnemyHealthStats enemyStat;
 
     void Awake()
     {
@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IDeath
     }
     private void InitializeEnemyStat()
     {
-        enemyStat = gameObject.GetComponent<EnemyStat>();
+        enemyStat = gameObject.GetComponent<EnemyHealthStats>();
     }
 
     public void ApplyDamage(float damage)
