@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5307187387358473683}
   - component: {fileID: 4378441033737406798}
   - component: {fileID: 2367812623158467871}
-  - component: {fileID: 6602847293537285188}
   - component: {fileID: 2803818864873987444}
+  - component: {fileID: 8527262531636729534}
   m_Layer: 8
   m_Name: Explosion
   m_TagString: Untagged
@@ -106,19 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87dbc84bcc4d1d9449ea3e7b1e5350b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireRangedBehaviour
---- !u!114 &6602847293537285188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9086935154153743000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca150b1bc3894ae4bbb7c1e94c24649e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FireRangedCombatStats
-  damage: 150
 --- !u!61 &2803818864873987444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +152,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8527262531636729534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086935154153743000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca150b1bc3894ae4bbb7c1e94c24649e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireRangedCombatStats
+  damage: 75
+  explosionDelay: 0.5
+  explosionVisibleDelay: 0.3

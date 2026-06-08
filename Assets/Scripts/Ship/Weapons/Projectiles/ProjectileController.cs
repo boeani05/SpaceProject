@@ -2,47 +2,38 @@ using UnityEngine;
 
 public abstract class ProjectileController : MonoBehaviour
 {
-    [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private float offsetInPercent;
+    [SerializeField] private GameObject prefab;
 
-    private Camera mainCamera;
+    protected ProjectileCalculator projectileCalculator;
 
     void Awake()
     {
-        InitializeMainCamera();
+        InitializeProjectileCalculator();
     }
 
-    private void InitializeMainCamera()
+    private void InitializeProjectileCalculator()
     {
-        mainCamera = Camera.main;
+        projectileCalculator = gameObject.GetComponent<ProjectileCalculator>();
     }
 
-    public virtual void Shoot()
+    protected virtual void Shoot()
     {
-        Vector2 direction = CalculateShootingDirection();
-        Vector2 spawnPosition = CalculateProjectileSpawningPosition(direction);
+        Vector2 direction = projectileCalculator.CalculateShootingDirection();
+        Vector2 spawnPosition = projectileCalculator.CalculateProjectileSpawningPosition(direction);
 
         GameObject projectile = SpawnProjectile(spawnPosition);
         InitializeProjectile(projectile, direction);
     }
 
-    private Vector2 CalculateShootingDirection()
+    protected GameObject SpawnProjectile(Vector2 spawnPosition)
     {
-        return ((Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position).normalized;
-    }
-
-    private Vector2 CalculateProjectileSpawningPosition(Vector2 directionFacing)
-    {
-        return (Vector2)transform.position + directionFacing * (offsetInPercent / 100f);
-    }
-
-    private GameObject SpawnProjectile(Vector2 spawnPosition)
-    {
-        return Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+        return Instantiate(prefab, spawnPosition, Quaternion.identity);
     }
 
     private void InitializeProjectile(GameObject projectile, Vector2 direction)
     {
         projectile.GetComponent<IProjectile>().SetDirection(direction);
     }
+
+    protected GameObject GetPrefab() => prefab;
 }

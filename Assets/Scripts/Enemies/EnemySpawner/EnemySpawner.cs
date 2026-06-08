@@ -6,11 +6,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Awake()
     {
-        SpawnEnemy();
-    }
-
-    private void SpawnEnemy()
-    {
         Instantiate(enemyPrefab, transform.position, Quaternion.identity);
     }
 }

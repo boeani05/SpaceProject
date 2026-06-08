@@ -180,8 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb1211fac0664040bf5177f838f60b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceRangedBehaviour
-  speedOfProjectile: 15
-  damage: 50
 --- !u!114 &7971881075414856555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,5 +193,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceRangedCombatStats
   slowMultiplier: 0.5
-  slowDuration: 0.25
+  slowDuration: 2
   damage: 50
+  projectileSpeed: 8

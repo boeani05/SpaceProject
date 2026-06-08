@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2cb564482d55b44ab3e81089f2ff41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightningRangedBehaviour
-  maxDistanceOfRay: 100
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -63,9 +62,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightningRangedCombatStats
   damage: 80
-  paralyzeDuration: 0.5
+  paralyzeDuration: 1
   paralyzeChanceInPercent: 10
   rayVisible: 0.2
+  maxDistanceOfRay: 20
 --- !u!120 &-8053270224266173076
 LineRenderer:
   serializedVersion: 3

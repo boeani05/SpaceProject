@@ -2,17 +2,17 @@ using UnityEngine;
 
 public abstract class ProjectileBehaviour : MonoBehaviour, IProjectile
 {
-    [SerializeField] private float speedOfProjectile;
-    [SerializeField] private int damage;
-
     private Camera mainCamera;
     private Vector2 direction;
     private new Rigidbody2D rigidbody2D;
+
+    private IProjectileStats projectileStats;
 
     protected void Awake()
     {
         SetMainCamera();
         SetRigidbody2D();
+        projectileStats = gameObject.GetComponent<IProjectileStats>();
     }
 
     private void SetMainCamera()
@@ -33,7 +33,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour, IProjectile
 
     private void ApplyMovementToProjectile()
     {
-        rigidbody2D.linearVelocity = direction * speedOfProjectile;
+        rigidbody2D.linearVelocity = direction * projectileStats.GetProjectileSpeed();
     }
 
     private void DestroyIfOutOfBounds()
@@ -54,7 +54,7 @@ public abstract class ProjectileBehaviour : MonoBehaviour, IProjectile
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(damage);
+        collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(projectileStats.GetDamage());
     }
 
     public void SetDirection(Vector2 direction)

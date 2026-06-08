@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class LightningRangedBehaviour : MonoBehaviour
 {
-    [SerializeField] private float maxDistanceOfRay;
     [SerializeField] private LayerMask enemyLayer;
 
     private LightningRangedCombatStats combatStats;
@@ -43,11 +42,11 @@ public class LightningRangedBehaviour : MonoBehaviour
 
     private void InitializeLightningRay()
     {
-        lightningRay = Physics2D.Raycast(transform.position, rayDirection, maxDistanceOfRay, enemyLayer);
+        lightningRay = Physics2D.Raycast(transform.position, rayDirection, combatStats.GetMaxDistanceOfRay(), enemyLayer);
 
         Vector2 endPoint = lightningRay.collider != null
             ? lightningRay.point
-            : (Vector2)transform.position + rayDirection * maxDistanceOfRay;
+            : (Vector2)transform.position + rayDirection * combatStats.GetMaxDistanceOfRay();
 
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, endPoint);

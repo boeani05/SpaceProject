@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450e702273b7a6142831ede2a46753c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealthStats
-  health: 50
+  health: 100
 --- !u!114 &2562269959758006425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,4 +299,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b28998727548be4e8066b5b93a1ea65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementStats
-  movementSpeed: 5
+  movementSpeed: 3

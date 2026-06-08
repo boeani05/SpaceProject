@@ -2,57 +2,39 @@ using UnityEngine;
 
 public class ShipMovement : MonoBehaviour
 {
-    [SerializeField] new Rigidbody2D rigidbody;
-    [SerializeField] float movementSpeed;
+    private new Rigidbody2D rigidbody;
+    private ShipVelocityCalculator inputHandler;
+    private ShipFlip shipFlip;
 
-    private float horizontalInput;
-    private float verticalInput;
-    private bool isFacingRight;
-    private bool isFacingUp;
-
-    void Update()
+    void Awake()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-        Flip();
+        InitializeInputHandler();
+        InitializeShipFlip();
+        InitializeRigidbody();
     }
 
-    void FixedUpdate()
+    private void InitializeInputHandler() {
+        inputHandler = gameObject.GetComponent<ShipVelocityCalculator>();
+    } 
+    private void InitializeShipFlip() {
+        shipFlip = gameObject.GetComponent<ShipFlip>();
+    } 
+    private void InitializeRigidbody()
     {
-        rigidbody.linearVelocity = new Vector2(horizontalInput, verticalInput).normalized * movementSpeed;
-    }
+        rigidbody = gameObject.GetComponent<Rigidbody2D>();
+    } 
 
-    private void Flip()
+    void Update() {
+        shipFlip.Flip(inputHandler.GetHorizontalInput(), inputHandler.GetVerticalInput());
+    } 
+
+    void FixedUpdate() 
     {
-        if (ShouldFlip(isFacingRight, horizontalInput))
-        {
-            isFacingRight = !isFacingRight;
-            FlipAxis(horizontal: true);
-        }
+        Move();
+    } 
 
-        if (ShouldFlip(isFacingUp, verticalInput))
-        {
-            isFacingUp = !isFacingUp;
-            FlipAxis(horizontal: false);
-        }
-    }
-
-    private bool ShouldFlip(bool isFacingPositiveDirection, float input)
+    private void Move()
     {
-        return (isFacingPositiveDirection && input < 0) || (!isFacingPositiveDirection && input > 0);
-    }
-
-    private void FlipAxis(bool horizontal)
-    {
-        Vector3 scale = transform.localScale;
-        if (horizontal)
-        {
-            scale.x *= -1;
-        }
-        else
-        {
-            scale.y *= -1;
-        }
-        transform.localScale = scale;
-    }
+        rigidbody.linearVelocity = inputHandler.GetVelocity();
+    } 
 }

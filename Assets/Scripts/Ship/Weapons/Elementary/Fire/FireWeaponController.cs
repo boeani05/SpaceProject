@@ -2,41 +2,30 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class FireWeaponController : MonoBehaviour, IElementaryWeapon
+public class FireWeaponController : WeaponController, IElementaryWeapon
 {
-    [SerializeField] private float explosionDelay;
-    [SerializeField] private float explosionVisibleDelay;
     [SerializeField] private GameObject explosionPrefab;
-
-    private Camera mainCamera;
+    private FireRangedCombatStats combatStats;
 
     void Awake()
     {
-        InitializeMainCamera();
+        base.Awake();
+        InitializeCombatStats();
     }
 
-    private void InitializeMainCamera()
+    private void InitializeCombatStats()
     {
-        mainCamera = Camera.main;
+        combatStats = gameObject.GetComponent<FireRangedCombatStats>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ranged();
-        }
+        if (Input.GetMouseButtonDown(0)) Ranged();
     }
 
-    public void Melee()
-    {
+    public void Melee() { }
 
-    }
-
-    public void Ranged()
-    {
-        Shoot();
-    }
+    public void Ranged() => Shoot();
 
     private void Shoot()
     {
@@ -44,16 +33,11 @@ public class FireWeaponController : MonoBehaviour, IElementaryWeapon
         StartCoroutine(FireSequence(currentMousePosition));
     }
 
-    private Vector2 CalculateMousePosition()
-    {
-        return mainCamera.ScreenToWorldPoint(Input.mousePosition);
-    }
-
     private IEnumerator FireSequence(Vector2 mousePosition)
     {
-        yield return new WaitForSeconds(explosionDelay);
+        yield return new WaitForSeconds(combatStats.GetExplosionDelay());
         GameObject explosion = SpawnExplosion(mousePosition);
-        yield return new WaitForSeconds(explosionVisibleDelay);
+        yield return new WaitForSeconds(combatStats.GetExplosionVisibleDelay());
         Destroy(explosion);
     }
 
@@ -61,13 +45,7 @@ public class FireWeaponController : MonoBehaviour, IElementaryWeapon
     {
         return Instantiate(explosionPrefab, position, Quaternion.identity);
     }
-    public void Ultimate()
-    {
 
-    }
-
-    public void CombineWithElementaryWeapon(IElementaryWeapon elementaryWeapon)
-    {
-
-    }
+    public void Ultimate() { }
+    public void CombineWithElementaryWeapon(IElementaryWeapon elementaryWeapon) { }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6383190837915409061}
   - component: {fileID: 1474913607829073129}
   - component: {fileID: -8069558228448174987}
+  - component: {fileID: 2087663941990228903}
   m_Layer: 8
   m_Name: Default
   m_TagString: Untagged
@@ -106,8 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820c71010cc9f1d45b545ebfe2c47ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  speedOfProjectile: 30
-  damage: 100
 --- !u!50 &1474913607829073129
 Rigidbody2D:
   serializedVersion: 5
@@ -181,3 +180,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2087663941990228903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227948636786398907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbd9a88ac0d6ea4985613ca6b8ba5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultWeaponStats
+  damage: 30
+  projectileSpeed: 12

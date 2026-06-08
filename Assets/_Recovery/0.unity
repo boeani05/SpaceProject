@@ -358,61 +358,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShipBehaviour
   health: 100
---- !u!114 &662300235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662300228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c14e0ce94f56e1e4f9b7ed61ec83a745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShipMovementStats
-  movementSpeed: 5
---- !u!114 &662300241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662300228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e13eb1b146800040a8527c0412651af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShipVelocityCalculator
---- !u!114 &662300242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662300228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dba3c59081990544c93b57c0919e795e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShipFlip
---- !u!1 &1097382583 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6403182543208886949, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-  m_PrefabInstance: {fileID: 2619046950124324897}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1097382587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1097382583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9007aaa823b2994cafd4ccb71d8a0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProjectileCalculator
-  offsetInPercent: 50
 --- !u!1001 &2619046950124324897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -461,34 +406,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4878185540972135742, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403182543208886949, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7192228416675340302, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 3299074747546642473, guid: 0afdde367c63ec94eb3f4472b27cad5d, type: 3}
-    - target: {fileID: 7192228416675340302, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: lightningPrefab
-      value: 
-      objectReference: {fileID: 3299074747546642473, guid: 0afdde367c63ec94eb3f4472b27cad5d, type: 3}
-    - target: {fileID: 7192228416675340302, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: offsetInPercent
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7192228416675340302, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: maxDistanceOfRay
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7192228416675340302, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 7289196828808033482, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -501,144 +418,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7292046261073210101, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7531172341460652806, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 7531172341460652806, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: offsetInPercent
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546644913082578973, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8779740862609460958, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8040505185648510371, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-    - {fileID: 6950079566989762967, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-    - {fileID: 1857635492622790997, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7289196828808033482, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 662300234}
-    - targetCorrespondingSourceObject: {fileID: 7289196828808033482, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 662300235}
-    - targetCorrespondingSourceObject: {fileID: 7289196828808033482, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 662300242}
-    - targetCorrespondingSourceObject: {fileID: 7289196828808033482, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 662300241}
-    - targetCorrespondingSourceObject: {fileID: 8546644913082578973, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2619046950124324903}
-    - targetCorrespondingSourceObject: {fileID: 8779740862609460958, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2619046950124324901}
-    - targetCorrespondingSourceObject: {fileID: 8779740862609460958, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2619046950124324907}
-    - targetCorrespondingSourceObject: {fileID: 4878185540972135742, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2619046950124324899}
-    - targetCorrespondingSourceObject: {fileID: 4878185540972135742, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2619046950124324904}
-    - targetCorrespondingSourceObject: {fileID: 6403182543208886949, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1097382587}
   m_SourcePrefab: {fileID: 100100000, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
---- !u!1 &2619046950124324898 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4878185540972135742, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-  m_PrefabInstance: {fileID: 2619046950124324897}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2619046950124324899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2619046950124324898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5e17d4877a79249a592c87f907c6ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DefaultWeaponController
-  prefab: {fileID: 7227948636786398907, guid: 1e66bc75342beb64a97096bac5681305, type: 3}
---- !u!1 &2619046950124324900 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8779740862609460958, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-  m_PrefabInstance: {fileID: 2619046950124324897}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2619046950124324901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2619046950124324900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e341bcc59e057fb419f89e7e042149fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IceWeaponController
-  prefab: {fileID: 5045021925292146758, guid: 6e730c5bd68b6744383c1d5672ed5bff, type: 3}
---- !u!1 &2619046950124324902 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8546644913082578973, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
-  m_PrefabInstance: {fileID: 2619046950124324897}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2619046950124324903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2619046950124324902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2b464eb63543547a3c2e61d4907e4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FireWeaponController
-  explosionPrefab: {fileID: 9086935154153743000, guid: 2cbdbfb685bf79140864a591c3750a11, type: 3}
---- !u!114 &2619046950124324904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2619046950124324898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9007aaa823b2994cafd4ccb71d8a0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProjectileCalculator
-  offsetInPercent: 50
---- !u!114 &2619046950124324907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2619046950124324900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9007aaa823b2994cafd4ccb71d8a0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProjectileCalculator
-  offsetInPercent: 50
 --- !u!1001 &7652004042364056107
 PrefabInstance:
   m_ObjectHideFlags: 0
