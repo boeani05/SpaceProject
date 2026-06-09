@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FireRangedBehaviour : MonoBehaviour
@@ -7,11 +8,23 @@ public class FireRangedBehaviour : MonoBehaviour
     void Awake()
     {
         InitializeCombatStats();
+        InitializeExplosion();
     }
 
     private void InitializeCombatStats()
     {
         combatStats = gameObject.GetComponent<FireRangedCombatStats>();
+    }
+
+    private void InitializeExplosion()
+    {
+        StartCoroutine(FireSequence());
+    }
+
+    private IEnumerator FireSequence()
+    {
+        yield return new WaitForSeconds(combatStats.GetExplosionVisibleDelay());
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

@@ -5,17 +5,19 @@ using UnityEngine;
 public class FireWeaponController : WeaponController, IElementaryWeapon
 {
     [SerializeField] private GameObject explosionPrefab;
-    private FireRangedCombatStats combatStats;
+
+    private FireRangedControllerStats stats;
 
     void Awake()
     {
         base.Awake();
-        InitializeCombatStats();
+
+        InitializeStats();
     }
 
-    private void InitializeCombatStats()
+    private void InitializeStats()
     {
-        combatStats = gameObject.GetComponent<FireRangedCombatStats>();
+        stats = gameObject.GetComponent<FireRangedControllerStats>();
     }
 
     void Update()
@@ -25,25 +27,26 @@ public class FireWeaponController : WeaponController, IElementaryWeapon
 
     public void Melee() { }
 
-    public void Ranged() => Shoot();
+    public void Ranged() 
+    {
+        Shoot();
+    } 
 
     private void Shoot()
     {
-        Vector2 currentMousePosition = CalculateMousePosition();
-        StartCoroutine(FireSequence(currentMousePosition));
+        Vector2 mousePosition = CalculateMousePosition();
+        StartCoroutine(StartExplosion(mousePosition));
     }
 
-    private IEnumerator FireSequence(Vector2 mousePosition)
+    private IEnumerator StartExplosion(Vector2 mousePosition)
     {
-        yield return new WaitForSeconds(combatStats.GetExplosionDelay());
-        GameObject explosion = SpawnExplosion(mousePosition);
-        yield return new WaitForSeconds(combatStats.GetExplosionVisibleDelay());
-        Destroy(explosion);
+        yield return new WaitForSeconds(stats.GetExplosionDelay());
+        SpawnExplosion(mousePosition);
     }
 
-    private GameObject SpawnExplosion(Vector2 position)
+    private void SpawnExplosion(Vector2 position)
     {
-        return Instantiate(explosionPrefab, position, Quaternion.identity);
+        Instantiate(explosionPrefab, position, Quaternion.identity);
     }
 
     public void Ultimate() { }
