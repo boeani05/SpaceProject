@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class FireWeaponController : WeaponController, IElementaryWeapon
+public class FireWeaponController : WeaponController, IElementaryWeapon, IWeapon
 {
     [SerializeField] private GameObject explosionPrefab;
 

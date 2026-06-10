@@ -9,13 +9,13 @@ public class EnemyManager : MonoBehaviour
         InitializeEnemyHealth();
     }
 
-    void Start()
-    {
-        enemyHealth.OnDeath += () => Destroy(gameObject);
-    }
-
     private void InitializeEnemyHealth()
     {
         enemyHealth = gameObject.GetComponent<EnemyHealth>();
+    }
+
+    void Start()
+    {
+        enemyHealth.OnDeath += () => Destroy(gameObject);
     }
 }

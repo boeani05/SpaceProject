@@ -413,6 +413,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileCalculator
   offsetInPercent: 50
+--- !u!114 &1127078387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7192228416675340302, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
+  m_PrefabInstance: {fileID: 2619046950124324897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097382583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10cea1de040a45048aaedada86813900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LIghtningWeaponController
+--- !u!1 &1127078388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7954813913183662387, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
+  m_PrefabInstance: {fileID: 2619046950124324897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1127078389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127078388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c7987fb8256ff41aedac31f2037beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
+--- !u!114 &1127078390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127078388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f649f53e9ac5ea1488cf7a43586f4d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponChanger
+  allWeapons:
+  - {fileID: 2619046950124324899}
+  - {fileID: 2619046950124324903}
+  - {fileID: 2619046950124324901}
+  - {fileID: 1127078387}
+  - {fileID: 1148428623}
 --- !u!1 &1148428621 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4621015913649708368, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
@@ -485,7 +531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4878185540972135742, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6403182543208886949, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       propertyPath: m_IsActive
@@ -535,9 +581,13 @@ PrefabInstance:
       propertyPath: offsetInPercent
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7954813913183662387, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
+      propertyPath: m_Name
+      value: WeaponManager
+      objectReference: {fileID: 0}
     - target: {fileID: 8546644913082578973, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8779740862609460958, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       propertyPath: m_IsActive
@@ -562,6 +612,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7289196828808033482, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 662300241}
+    - targetCorrespondingSourceObject: {fileID: 7954813913183662387, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1127078390}
+    - targetCorrespondingSourceObject: {fileID: 7954813913183662387, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1127078389}
     - targetCorrespondingSourceObject: {fileID: 8546644913082578973, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2619046950124324903}

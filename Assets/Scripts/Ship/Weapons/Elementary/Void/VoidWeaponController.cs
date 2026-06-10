@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class VoidWeaponController : WeaponController, IElementaryWeapon
+public class VoidWeaponController : WeaponController, IElementaryWeapon, IWeapon
 {
     [SerializeField] private GameObject blackHolePrefab;
 

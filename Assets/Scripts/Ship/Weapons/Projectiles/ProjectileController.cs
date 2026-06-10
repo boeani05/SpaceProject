@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ProjectileController : MonoBehaviour
+public abstract class ProjectileController : MonoBehaviour, IWeapon
 {
     [SerializeField] private GameObject prefab;
 
