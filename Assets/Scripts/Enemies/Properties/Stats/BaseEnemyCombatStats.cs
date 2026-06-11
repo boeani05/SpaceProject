@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyCombatStats : MonoBehaviour, IDamageSource
+public abstract class BaseEnemyCombatStats : MonoBehaviour, IDamageSource
 {
     [SerializeField] private float damage;
 

@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyKnockback : MonoBehaviour
+public class StandardEnemyKnockback : MonoBehaviour
 {
-    private EnemyKnockbackStats enemyKnockbackStats;
-    private EnemyMovementStats enemyMovementStats;
+    private StandardEnemyKnockbackStats enemyKnockbackStats;
+    private BaseEnemyMovementStats enemyMovementStats;
     private bool isKnockbackActive;
     private float knockbackForce;
     private new Rigidbody2D rigidbody2D;
-    private EnemyNavigation enemyNavigation;
+    private StandardEnemyNavigation enemyNavigation;
 
     void Awake()
     {
@@ -21,12 +21,12 @@ public class EnemyKnockback : MonoBehaviour
     }
     private void InitializeEnemyKnockbackStats()
     {
-        enemyKnockbackStats = gameObject.GetComponent<EnemyKnockbackStats>();
+        enemyKnockbackStats = gameObject.GetComponent<StandardEnemyKnockbackStats>();
     }
 
     private void InitializeEnemyMovementStats()
     {
-        enemyMovementStats = gameObject.GetComponent<EnemyMovementStats>();
+        enemyMovementStats = gameObject.GetComponent<BaseEnemyMovementStats>();
     }
 
     private void InitializeRigidbody2D()
@@ -43,7 +43,7 @@ public class EnemyKnockback : MonoBehaviour
     }
     private void InitializeEnemyNavigation()
     {
-        enemyNavigation = gameObject.GetComponent<EnemyNavigation>();
+        enemyNavigation = gameObject.GetComponent<StandardEnemyNavigation>();
     }
 
     public bool IsKnockbackActive()

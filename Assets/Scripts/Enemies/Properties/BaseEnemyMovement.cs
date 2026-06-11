@@ -1,20 +1,18 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour, ISlowable, IParalyzable
+public abstract class BaseEnemyMovement : MonoBehaviour, ISlowable, IParalyzable
 {
-    private EnemyMovementStats enemyMovementStats;
-    private EnemyKnockback enemyKnockback;
-    private EnemyNavigation enemyNavigation;
+    private BaseEnemyMovementStats enemyMovementStats;
+    private BaseEnemyNavigation enemyNavigation;
     private new Rigidbody2D rigidbody2D;
 
     private bool isSlowed;
     private bool isParalyzed;
 
-    void Awake()
+    protected virtual void Awake()
     {
         InitializeEnemyStat();
-        InitializeEnemyKnockback();
         InitializeEnemyNavigation();
         InitializeRigidbody2D();
         InitializeSlowed();
@@ -22,15 +20,11 @@ public class EnemyMovement : MonoBehaviour, ISlowable, IParalyzable
     }
     private void InitializeEnemyStat()
     {
-        enemyMovementStats = gameObject.GetComponent<EnemyMovementStats>();
-    }
-    private void InitializeEnemyKnockback()
-    {
-        enemyKnockback = gameObject.GetComponent<EnemyKnockback>();
+        enemyMovementStats = gameObject.GetComponent<BaseEnemyMovementStats>();
     }
     private void InitializeEnemyNavigation()
     {
-        enemyNavigation = gameObject.GetComponent<EnemyNavigation>();
+        enemyNavigation = gameObject.GetComponent<BaseEnemyNavigation>();
     }
     private void InitializeRigidbody2D()
     {
@@ -45,12 +39,9 @@ public class EnemyMovement : MonoBehaviour, ISlowable, IParalyzable
         isParalyzed = false;
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        if (!enemyKnockback.IsKnockbackActive())
-        {
-            MoveToPlayer(enemyNavigation.EvaluateDirection());
-        }
+        MoveToPlayer(enemyNavigation.EvaluateDirection());
     }
     private void MoveToPlayer(Vector2 directionToMove)
     {

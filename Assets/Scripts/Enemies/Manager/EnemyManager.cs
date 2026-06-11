@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    private EnemyHealth enemyHealth;
+    private BaseEnemyHealth enemyHealth;
 
     void Awake()
     {
@@ -11,7 +11,7 @@ public class EnemyManager : MonoBehaviour
 
     private void InitializeEnemyHealth()
     {
-        enemyHealth = gameObject.GetComponent<EnemyHealth>();
+        enemyHealth = gameObject.GetComponent<BaseEnemyHealth>();
     }
 
     void Start()

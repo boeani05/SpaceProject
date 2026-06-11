@@ -18,10 +18,10 @@ GameObject:
   - component: {fileID: 2987320790545561770}
   - component: {fileID: 1981898145713648227}
   - component: {fileID: 1323768033728762939}
-  - component: {fileID: 3898423022082803910}
-  - component: {fileID: 1049825966906319629}
   - component: {fileID: 2562269959758006425}
-  - component: {fileID: 7086037563527623146}
+  - component: {fileID: 5778359615519691658}
+  - component: {fileID: 9023809507312588887}
+  - component: {fileID: 1879498431502585558}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -248,32 +248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a072b1cc339a54280d573b218896c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
---- !u!114 &3898423022082803910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df469a15c3997a488e760bca836d8f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyCombatStats
-  damage: 5
---- !u!114 &1049825966906319629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450e702273b7a6142831ede2a46753c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealthStats
-  health: 100
 --- !u!114 &2562269959758006425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyKnockbackStats
   knockbackMultiplier: 2
---- !u!114 &7086037563527623146
+--- !u!114 &5778359615519691658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,7 +270,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 9081970479216051085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b28998727548be4e8066b5b93a1ea65, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d94ffbb55df04340be806b15b2d459d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementStats
+  m_EditorClassIdentifier: Assembly-CSharp::StandardEnemyCombatStats
+  damage: 2
+--- !u!114 &9023809507312588887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081970479216051085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06e2ed4281c89e44a21b0643793e274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StandardEnemyHealthStats
+  health: 100
+--- !u!114 &1879498431502585558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081970479216051085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f7ab104f778f948974665485119a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StandardEnemyMovementStats
   movementSpeed: 3

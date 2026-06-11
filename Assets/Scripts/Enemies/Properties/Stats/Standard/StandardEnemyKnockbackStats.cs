@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyKnockbackStats : MonoBehaviour
+public class StandardEnemyKnockbackStats : MonoBehaviour
 {
     [SerializeField] private float knockbackMultiplier;
 

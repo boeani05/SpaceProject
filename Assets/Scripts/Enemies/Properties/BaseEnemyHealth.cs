@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour, IDamageable, IDeath
+public abstract class BaseEnemyHealth : MonoBehaviour, IDamageable, IDeath
 {
     public Action OnDeath;
-    private EnemyHealthStats enemyStat;
+    private BaseEnemyHealthStats enemyStat;
 
     void Awake()
     {
@@ -12,7 +12,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IDeath
     }
     private void InitializeEnemyStat()
     {
-        enemyStat = gameObject.GetComponent<EnemyHealthStats>();
+        enemyStat = gameObject.GetComponent<BaseEnemyHealthStats>();
     }
 
     public void ApplyDamage(float damage)

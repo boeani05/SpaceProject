@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyNavigation : MonoBehaviour
+public abstract class BaseEnemyNavigation : MonoBehaviour
 {
     private GameObject player;
 
