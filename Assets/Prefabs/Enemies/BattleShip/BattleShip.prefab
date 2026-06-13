@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9081970479216051085
+--- !u!1 &2329819722620168103
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4484968920697669238}
-  - component: {fileID: 2432183225989282783}
-  - component: {fileID: 1688048218982524953}
-  - component: {fileID: 384915085854568435}
-  - component: {fileID: 2958379028981645495}
-  - component: {fileID: 4130793238385931438}
-  - component: {fileID: 2734014136025839726}
-  - component: {fileID: 2987320790545561770}
-  - component: {fileID: 1981898145713648227}
-  - component: {fileID: 1323768033728762939}
-  - component: {fileID: 2562269959758006425}
-  - component: {fileID: 5778359615519691658}
-  - component: {fileID: 9023809507312588887}
-  - component: {fileID: 1879498431502585558}
-  - component: {fileID: 1994460646443065713}
+  - component: {fileID: 1319682363430808900}
+  - component: {fileID: 1264852094458769806}
+  - component: {fileID: 2983379665503265462}
+  - component: {fileID: 4075544229133440217}
+  - component: {fileID: 6109814687012354740}
+  - component: {fileID: 6698632028623942207}
+  - component: {fileID: 3348556045570590783}
+  - component: {fileID: 8567516664026964481}
+  - component: {fileID: 7026389618745025587}
+  - component: {fileID: 738560886455609848}
+  - component: {fileID: 3937166573462374796}
+  - component: {fileID: 4402573255547352010}
+  - component: {fileID: 426782773079127898}
+  - component: {fileID: 6494784216073481384}
+  - component: {fileID: 716526815913117072}
+  - component: {fileID: 504418972349399376}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: BattleShip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4484968920697669238
+--- !u!4 &1319682363430808900
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.98, y: 3.35, z: 0}
+  m_LocalPosition: {x: -4.48772, y: -0.97469, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2432183225989282783
+--- !u!212 &1264852094458769806
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +96,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.6854019, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,14 +105,14 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!50 &1688048218982524953
+--- !u!50 &2983379665503265462
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -131,13 +132,13 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &384915085854568435
+--- !u!61 &4075544229133440217
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -177,139 +178,152 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2958379028981645495
+--- !u!114 &6109814687012354740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb71c52035bc3d04494e1aa08916c06f, type: 3}
+  m_Script: {fileID: 11500000, guid: a971078aafa3ed643a60f98e77e78464, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
---- !u!114 &4130793238385931438
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipMovement
+--- !u!114 &6698632028623942207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1783f8218cf9b2b4a84c9601d0b98ab5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3aa8b1599ddc4f74b99265ca8713a89d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
---- !u!114 &2734014136025839726
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipDistanceChecker
+--- !u!114 &3348556045570590783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0cb9dbf8de8660468c2f41defb2bdb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 91866b677cf61fa4ab92c9c5bb6c18a8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnockback
---- !u!114 &2987320790545561770
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipCombatStats
+  cooldown: 2
+--- !u!114 &8567516664026964481
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc9af8d21dd052546a5beed0958b769f, type: 3}
+  m_Script: {fileID: 11500000, guid: 31fa1f7a06ff98441b1189e9207c359f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyNavigation
---- !u!114 &1981898145713648227
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipNavigation
+--- !u!114 &7026389618745025587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15ec5c2c21884444b875c52b49bc9234, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f2d315f76a1ef4083225928c0bfc16, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviour
---- !u!114 &1323768033728762939
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipDistanceStats
+  range: 6
+--- !u!114 &738560886455609848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a072b1cc339a54280d573b218896c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 12e09c9fe273930499ca618ebcf1298d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
---- !u!114 &2562269959758006425
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipHealthStats
+  health: 150
+--- !u!114 &3937166573462374796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2999d82a10e772b47bb9832ab50ba971, type: 3}
+  m_Script: {fileID: 11500000, guid: 96c9656f9f08675448da3155db999b59, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnockbackStats
-  knockbackMultiplier: 2
---- !u!114 &5778359615519691658
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipMovementStats
+  movementSpeed: 1.5
+--- !u!114 &4402573255547352010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d94ffbb55df04340be806b15b2d459d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StandardEnemyCombatStats
-  damage: 2
---- !u!114 &9023809507312588887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06e2ed4281c89e44a21b0643793e274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StandardEnemyHealthStats
-  health: 100
---- !u!114 &1879498431502585558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f7ab104f778f948974665485119a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StandardEnemyMovementStats
-  movementSpeed: 3
---- !u!114 &1994460646443065713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081970479216051085}
+  m_GameObject: {fileID: 2329819722620168103}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fba11f2bab03fb41acc59d28bf507a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLocator
+--- !u!114 &426782773079127898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329819722620168103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fa1f7a06ff98441b1189e9207c359f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipNavigation
+--- !u!114 &6494784216073481384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329819722620168103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d088d22d4a03c4f8a1575cc979d173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipCombat
+  projectile: {fileID: 3903749424025885645, guid: 91b22ff645b99f34188aee946778ae02, type: 3}
+--- !u!114 &716526815913117072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329819722620168103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5edd74d2d4a0f341941a406610da2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleShipHealth
+--- !u!114 &504418972349399376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329819722620168103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a072b1cc339a54280d573b218896c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager

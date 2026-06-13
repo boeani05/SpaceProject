@@ -2,19 +2,20 @@ using UnityEngine;
 
 public abstract class BaseEnemyNavigation : MonoBehaviour
 {
-    private GameObject player;
+    private PlayerLocator playerLocator;
 
     void Awake()
     {
-        InitializePlayer();
+        InitializePlayerLocator();
     }
 
-    private void InitializePlayer()
+    private void InitializePlayerLocator()
     {
-        player = GameObject.FindWithTag("Player");
+        playerLocator = gameObject.GetComponent<PlayerLocator>();
     }
+
     public Vector2 EvaluateDirection()
     {
-        return (player.transform.position - transform.position).normalized;
+        return (playerLocator.GetPlayer().transform.position - transform.position).normalized;
     }
 }

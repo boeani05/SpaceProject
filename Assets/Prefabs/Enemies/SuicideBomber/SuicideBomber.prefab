@@ -18,9 +18,12 @@ GameObject:
   - component: {fileID: 6216959913674546572}
   - component: {fileID: 1169273136089172683}
   - component: {fileID: 3830804835909990778}
-  m_Layer: 0
+  - component: {fileID: 323150766460676676}
+  - component: {fileID: 3696718182776576392}
+  - component: {fileID: 2840241654505332251}
+  m_Layer: 7
   m_Name: SuicideBomber
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,3 +251,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfe23b25cdd9224eae62ee32a030507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SuicideBomberCombat
+--- !u!114 &323150766460676676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232193971550824042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fba11f2bab03fb41acc59d28bf507a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLocator
+--- !u!114 &3696718182776576392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232193971550824042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466ac5ce785faa64e8b21ccdda4b462f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuicideBomberHealth
+--- !u!114 &2840241654505332251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232193971550824042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a072b1cc339a54280d573b218896c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager

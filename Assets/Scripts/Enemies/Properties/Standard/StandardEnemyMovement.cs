@@ -5,22 +5,20 @@ public class StandardEnemyMovement : BaseEnemyMovement
 {
     private StandardEnemyKnockback enemyKnockback;
 
-    void Awake()
+    protected override void Awake()
     {
         base.Awake();
         InitializeEnemyKnockback();
     }
 
-    protected override void FixedUpdate()
-    {
-        if (!enemyKnockback.IsKnockbackActive())
-        {
-            base.FixedUpdate();
-        }
-    }
-
     private void InitializeEnemyKnockback()
     {
         enemyKnockback = gameObject.GetComponent<StandardEnemyKnockback>();
+    }
+
+    protected override void FixedUpdate()
+    {
+        if (enemyKnockback.IsKnockbackActive()) return;
+        base.FixedUpdate();
     }
 }

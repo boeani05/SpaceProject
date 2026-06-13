@@ -39,10 +39,21 @@ public abstract class BaseEnemyMovement : MonoBehaviour, ISlowable, IParalyzable
         isParalyzed = false;
     }
 
+
+
     protected virtual void FixedUpdate()
     {
+        if (!ShouldMove())
+        {
+            rigidbody2D.linearVelocity = Vector2.zero;
+            return;
+        }
+
         MoveToPlayer(enemyNavigation.EvaluateDirection());
     }
+
+    protected virtual bool ShouldMove() => true;
+
     private void MoveToPlayer(Vector2 directionToMove)
     {
         rigidbody2D.linearVelocity = directionToMove * enemyMovementStats.GetMovementSpeed();
