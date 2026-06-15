@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SuicideBomberCombat : BaseEnemyCombat
 {
+    [SerializeField] private float explosionShakeIntensity;
     private SuicideBomberCombatStats combatStats;
 
     protected override void Awake()
@@ -18,6 +19,8 @@ public class SuicideBomberCombat : BaseEnemyCombat
         {
             base.DealDamage(collider.gameObject);
         }
+
+        CameraShaker.Instance.Shake(explosionShakeIntensity);
 
         Destroy(gameObject);
     }

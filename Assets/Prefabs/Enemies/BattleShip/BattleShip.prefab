@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 6494784216073481384}
   - component: {fileID: 716526815913117072}
   - component: {fileID: 504418972349399376}
+  - component: {fileID: 1514209131932039333}
+  - component: {fileID: 7397671435835009442}
   m_Layer: 7
   m_Name: BattleShip
   m_TagString: Enemy
@@ -315,6 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5edd74d2d4a0f341941a406610da2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleShipHealth
+  hitShakeIntensity: 0.1
+  deathShakeIntensity: 0.3
 --- !u!114 &504418972349399376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,3 +331,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a072b1cc339a54280d573b218896c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
+--- !u!114 &1514209131932039333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329819722620168103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c54ced748b3b344bf56fa313839ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitFlashStats
+  flashDuration: 0.05
+--- !u!114 &7397671435835009442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329819722620168103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1392989f7d88e1143802c8d851edc29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitFlash

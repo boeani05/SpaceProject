@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 9023809507312588887}
   - component: {fileID: 1879498431502585558}
   - component: {fileID: 1994460646443065713}
+  - component: {fileID: 3306593136442205040}
+  - component: {fileID: 4918253095816427502}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -201,6 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1783f8218cf9b2b4a84c9601d0b98ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  hitShakeIntensity: 0.1
+  deathShakeIntensity: 0.3
 --- !u!114 &2734014136025839726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,3 +317,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fba11f2bab03fb41acc59d28bf507a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLocator
+--- !u!114 &3306593136442205040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081970479216051085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c54ced748b3b344bf56fa313839ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitFlashStats
+  flashDuration: 0.05
+--- !u!114 &4918253095816427502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081970479216051085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1392989f7d88e1143802c8d851edc29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHitFlash
