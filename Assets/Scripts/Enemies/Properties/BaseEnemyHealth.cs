@@ -37,4 +37,9 @@ public abstract class BaseEnemyHealth : MonoBehaviour, IDamageable, IDeath
     {
         return enemyStat.GetHealth() > 0.0f;
     }
+
+    public void Kill()
+    {
+        OnDeath?.Invoke();
+    }
 }

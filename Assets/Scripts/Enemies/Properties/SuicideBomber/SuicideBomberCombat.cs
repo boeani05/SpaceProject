@@ -4,11 +4,13 @@ public class SuicideBomberCombat : BaseEnemyCombat
 {
     [SerializeField] private float explosionShakeIntensity;
     private SuicideBomberCombatStats combatStats;
+    private BaseEnemyHealth enemyHealth;
 
     protected override void Awake()
     {
         base.Awake();
         combatStats = gameObject.GetComponent<SuicideBomberCombatStats>();
+        enemyHealth = gameObject.GetComponent<BaseEnemyHealth>();
     }
 
     protected override void OnCollisionEnter2D(Collision2D collision)
@@ -22,6 +24,6 @@ public class SuicideBomberCombat : BaseEnemyCombat
 
         CameraShaker.Instance.Shake(explosionShakeIntensity);
 
-        Destroy(gameObject);
+        enemyHealth.Kill();
     }
 }

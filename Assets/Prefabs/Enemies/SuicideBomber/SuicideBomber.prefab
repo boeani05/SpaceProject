@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 2840241654505332251}
   - component: {fileID: 3973991841068816442}
   - component: {fileID: 2543671149402935087}
+  - component: {fileID: 1009983847399843508}
   m_Layer: 7
   m_Name: SuicideBomber
   m_TagString: Enemy
@@ -317,3 +318,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1392989f7d88e1143802c8d851edc29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHitFlash
+--- !u!114 &1009983847399843508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232193971550824042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827d2f5ca86d9a84c9b95889883a2335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathParticles
+  prefab: {fileID: 6190466505982906387, guid: 13846572865f0ff499e532c7b5077721, type: 3}

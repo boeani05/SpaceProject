@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 504418972349399376}
   - component: {fileID: 1514209131932039333}
   - component: {fileID: 7397671435835009442}
+  - component: {fileID: 2199031374099788182}
   m_Layer: 7
   m_Name: BattleShip
   m_TagString: Enemy
@@ -356,3 +357,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1392989f7d88e1143802c8d851edc29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHitFlash
+--- !u!114 &2199031374099788182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329819722620168103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827d2f5ca86d9a84c9b95889883a2335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathParticles
+  prefab: {fileID: 6190466505982906387, guid: 13846572865f0ff499e532c7b5077721, type: 3}
