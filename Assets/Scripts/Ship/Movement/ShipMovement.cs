@@ -3,26 +3,17 @@ using UnityEngine;
 public class ShipMovement : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
-    private ShipVelocityCalculator inputHandler;
+    private ShipInputReader inputHandler;
     private ShipFlip shipFlip;
+    private ShipMovementStats movementStats;
 
     void Awake()
     {
-        InitializeInputHandler();
-        InitializeShipFlip();
-        InitializeRigidbody();
-    }
-
-    private void InitializeInputHandler() {
-        inputHandler = gameObject.GetComponent<ShipVelocityCalculator>();
-    } 
-    private void InitializeShipFlip() {
+        movementStats = gameObject.GetComponent<ShipMovementStats>();
+        inputHandler = gameObject.GetComponent<ShipInputReader>();
         shipFlip = gameObject.GetComponent<ShipFlip>();
-    } 
-    private void InitializeRigidbody()
-    {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
-    } 
+    }
 
     void Update() {
         shipFlip.Flip(inputHandler.GetHorizontalInput(), inputHandler.GetVerticalInput());
@@ -35,6 +26,11 @@ public class ShipMovement : MonoBehaviour
 
     private void Move()
     {
-        rigidbody.linearVelocity = inputHandler.GetVelocity();
-    } 
+        rigidbody.AddForce(inputHandler.GetMovementDirection() * movementStats.GetAccelerationForce());
+
+        if(rigidbody.linearVelocity.magnitude > movementStats.GetMaxSpeed())
+        {
+            rigidbody.linearVelocity = rigidbody.linearVelocity.normalized * movementStats.GetMaxSpeed();
+        }
+    }
 }

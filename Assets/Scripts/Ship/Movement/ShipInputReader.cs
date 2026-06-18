@@ -1,15 +1,9 @@
 using UnityEngine;
 
-public class ShipVelocityCalculator : MonoBehaviour
+public class ShipInputReader : MonoBehaviour
 {
     private float horizontalInput;
     private float verticalInput;
-    private ShipMovementStats movementStats;
-
-    void Awake() 
-    {
-        movementStats = gameObject.GetComponent<ShipMovementStats>();
-    } 
 
     void Update()
     {
@@ -17,7 +11,7 @@ public class ShipVelocityCalculator : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
     }
 
-    public Vector2 GetVelocity() => new Vector2(horizontalInput, verticalInput).normalized * movementStats.GetMovementSpeed();
+    public Vector2 GetMovementDirection() => new Vector2(horizontalInput, verticalInput).normalized;
     public float GetHorizontalInput() => horizontalInput;
     public float GetVerticalInput() => verticalInput;
 }

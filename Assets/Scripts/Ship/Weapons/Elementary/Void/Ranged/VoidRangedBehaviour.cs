@@ -22,11 +22,15 @@ public class VoidRangedBehaviour : MonoBehaviour
 
         while(timePassed <= stats.GetDuration())
         {
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, stats.GetRadiusOfPull());
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, stats.GetRadiusOfPull());
 
             foreach (Collider2D collider in colliders)
             {
-                collider.GetComponent<Rigidbody2D>().AddForce((transform.position - collider.transform.position) * stats.GetPullForce());
+                Rigidbody2D rigidbody = collider.GetComponent<Rigidbody2D>();
+                if (rigidbody != null)
+                {
+                    rigidbody.AddForce((transform.position - collider.transform.position) * stats.GetPullForce());
+                }
                 collider.gameObject.GetComponent<IDamageable>()?.ApplyDamage(stats.GetDamage() * Time.deltaTime);
             }
 
