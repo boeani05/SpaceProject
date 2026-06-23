@@ -5,27 +5,28 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private List<WaveData> waves;
-    
     private int currentWaveIndex;
-    private int aliveCounter;
     private EnemySpawner enemySpawner;
-
+    private EnemyDeathHandler enemyDeathHandler;
     public Action OnAllWavesCleared;
-
+    
     void Awake()
     {
         currentWaveIndex = 0;
         enemySpawner = gameObject.GetComponent<EnemySpawner>();
+        enemyDeathHandler = gameObject.GetComponent<EnemyDeathHandler>();
     }
 
     void Start()
     {
+        enemyDeathHandler.OnWaveCleared += HandleWaveCleared;
         OnAllWavesCleared += HandleAllWavesCleared;
         StartWave();
     }
 
     void OnDestroy()
     {
+        enemyDeathHandler.OnWaveCleared -= HandleWaveCleared;
         OnAllWavesCleared -= HandleAllWavesCleared;
     }
 
@@ -33,34 +34,24 @@ public class WaveManager : MonoBehaviour
     {
         WaveData currentWaveData = waves[currentWaveIndex];
 
-        BaseEnemyHealth[] spawnedEnemies = enemySpawner.Spawn(currentWaveData.GetEnemyPool(), currentWaveData.GetEnemyCount());
-        aliveCounter = spawnedEnemies.Length;
-
-        foreach(BaseEnemyHealth enemy in spawnedEnemies)
-        {
-            enemy.OnDeath += HandleEnemyDeath;
-        }
+        BaseEnemyHealth[] enemies = enemySpawner.Spawn(currentWaveData.GetEnemyPool(), currentWaveData.GetEnemyCount());
+        enemyDeathHandler.TrackWave(enemies);
     }
 
-    private void HandleEnemyDeath()
+    private void HandleWaveCleared()
     {
-        aliveCounter--;
+        currentWaveIndex++;
         
-        if(aliveCounter <= 0)
+        if (currentWaveIndex < waves.Count)
         {
-            currentWaveIndex++;
-
-            if(currentWaveIndex < waves.Count)
-            {
-                StartWave();
-            } else
-            {
-                OnAllWavesCleared?.Invoke();
-            }
+            StartWave();
+        } else
+        {
+            OnAllWavesCleared?.Invoke();
         }
     }
 
-        private void HandleAllWavesCleared()
+    private void HandleAllWavesCleared()
     {
         Debug.Log("BOSS WAVE SPAWNING");
     }
