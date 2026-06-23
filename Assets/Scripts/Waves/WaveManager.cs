@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class WaveManager : MonoBehaviour
     private int aliveCounter;
     private EnemySpawner enemySpawner;
 
+    public Action OnAllWavesCleared;
+
     void Awake()
     {
         currentWaveIndex = 0;
@@ -17,15 +20,18 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        OnAllWavesCleared += HandleAllWavesCleared;
         StartWave();
+    }
+
+    void OnDestroy()
+    {
+        OnAllWavesCleared -= HandleAllWavesCleared;
     }
 
     private void StartWave()
     {
         WaveData currentWaveData = waves[currentWaveIndex];
-
-           Debug.Log($"Welle {currentWaveIndex}: count={currentWaveData.GetEnemyCount()}, poolSize={currentWaveData.GetEnemyPool().Length}");
-
 
         BaseEnemyHealth[] spawnedEnemies = enemySpawner.Spawn(currentWaveData.GetEnemyPool(), currentWaveData.GetEnemyCount());
         aliveCounter = spawnedEnemies.Length;
@@ -47,7 +53,15 @@ public class WaveManager : MonoBehaviour
             if(currentWaveIndex < waves.Count)
             {
                 StartWave();
+            } else
+            {
+                OnAllWavesCleared?.Invoke();
             }
         }
+    }
+
+        private void HandleAllWavesCleared()
+    {
+        Debug.Log("BOSS WAVE SPAWNING");
     }
 }

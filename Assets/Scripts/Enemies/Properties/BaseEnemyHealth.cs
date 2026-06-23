@@ -22,13 +22,14 @@ public abstract class BaseEnemyHealth : MonoBehaviour, IDamageable, IDeath
         enemyStat.SetHealth(enemyStat.GetHealth() - damage);
         hitFlash.Flash();
         NotifyManagerOnDeath();
+
     }
 
     private void NotifyManagerOnDeath()
     {
         if (!IsAlive())
         {
-            OnDeath?.Invoke();
+            Kill();
             CameraShaker.Instance.Shake(deathShakeIntensity);
         }
     }
