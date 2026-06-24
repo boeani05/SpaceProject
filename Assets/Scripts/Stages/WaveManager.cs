@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private List<WaveData> waves;
+    [SerializeField] private StageData stageData;
     private int currentWaveIndex;
     private EnemySpawner enemySpawner;
     private EnemyDeathHandler enemyDeathHandler;
@@ -32,7 +32,7 @@ public class WaveManager : MonoBehaviour
 
     private void StartWave()
     {
-        WaveData currentWaveData = waves[currentWaveIndex];
+        WaveData currentWaveData = stageData.GetWaves()[currentWaveIndex];
 
         BaseEnemyHealth[] enemies = enemySpawner.Spawn(currentWaveData.GetEnemyPool(), currentWaveData.GetEnemyCount());
         enemyDeathHandler.TrackWave(enemies);
@@ -42,7 +42,7 @@ public class WaveManager : MonoBehaviour
     {
         currentWaveIndex++;
         
-        if (currentWaveIndex < waves.Count)
+        if (currentWaveIndex < stageData.GetWaves().Count)
         {
             StartWave();
         } else

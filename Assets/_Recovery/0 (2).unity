@@ -851,21 +851,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b172bd5f2fe8b4ca795f07d645b2a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  stageData:
-    waves:
-    - enemyCount: 2
-      delayAfterWave: 1
-      enemyPool:
-      - {fileID: 9081970479216051085, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
-    - enemyCount: 3
-      delayAfterWave: 1
-      enemyPool:
-      - {fileID: 9081970479216051085, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
-    - enemyCount: 4
-      delayAfterWave: 1
-      enemyPool:
-      - {fileID: 9081970479216051085, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
-    bossPrefab: {fileID: 0}
+  waves:
+  - enemyCount: 2
+    delayAfterWave: 1
+    enemyPool:
+    - {fileID: 9081970479216051085, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+  - enemyCount: 3
+    delayAfterWave: 1
+    enemyPool:
+    - {fileID: 9081970479216051085, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+    - {fileID: 6232193971550824042, guid: 5733f54a398c9ba47817286e189f3b3e, type: 3}
+  - enemyCount: 4
+    delayAfterWave: 1
+    enemyPool:
+    - {fileID: 9081970479216051085, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+    - {fileID: 6232193971550824042, guid: 5733f54a398c9ba47817286e189f3b3e, type: 3}
+    - {fileID: 2329819722620168103, guid: deab24afc8f2a794bbc11f1ba6021757, type: 3}
 --- !u!114 &6043788116251128058
 MonoBehaviour:
   m_ObjectHideFlags: 0
