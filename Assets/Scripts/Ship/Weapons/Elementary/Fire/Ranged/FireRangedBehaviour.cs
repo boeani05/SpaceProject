@@ -30,5 +30,6 @@ public class FireRangedBehaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(combatStats.GetDamage());
+        collision.gameObject.GetComponent<IBurnable>()?.ApplyBurn(combatStats.GetTickInterval(), combatStats.GetDamagePerTick(), combatStats.GetBurnDuration());
     }
 }

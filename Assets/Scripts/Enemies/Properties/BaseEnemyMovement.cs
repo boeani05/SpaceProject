@@ -12,34 +12,12 @@ public abstract class BaseEnemyMovement : MonoBehaviour, ISlowable, IParalyzable
 
     protected virtual void Awake()
     {
-        InitializeEnemyStat();
-        InitializeEnemyNavigation();
-        InitializeRigidbody2D();
-        InitializeSlowed();
-        InitializeParalyzed();
-    }
-    private void InitializeEnemyStat()
-    {
         enemyMovementStats = gameObject.GetComponent<BaseEnemyMovementStats>();
-    }
-    private void InitializeEnemyNavigation()
-    {
         enemyNavigation = gameObject.GetComponent<BaseEnemyNavigation>();
-    }
-    private void InitializeRigidbody2D()
-    {
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
-    }
-    private void InitializeSlowed()
-    {
         isSlowed = false;
-    }
-    private void InitializeParalyzed()
-    {
         isParalyzed = false;
     }
-
-
 
     protected virtual void FixedUpdate()
     {

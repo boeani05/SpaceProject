@@ -492,6 +492,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VoidWeaponController
   blackHolePrefab: {fileID: 8894370008320526217, guid: e0c3039eee0373e47b1f49362b86bf8b, type: 3}
+--- !u!1001 &1207314524
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.277345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2632885
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484968920697669238, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023809507312588887, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: health
+      value: 10000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081970479216051085, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
 --- !u!1001 &2619046950124324897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -807,6 +868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3470159103809529729, guid: f27698f2f7de5f94caacf894c65e0823, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -886,3 +951,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 2619046950124324897}
   - {fileID: 6043788116251128053}
+  - {fileID: 1207314524}

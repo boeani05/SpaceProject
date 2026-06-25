@@ -165,5 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireRangedCombatStats
   damage: 75
-  explosionDelay: 0.5
   explosionVisibleDelay: 0.3
+  tickInterval: 0.5
+  damagePerTick: 5
+  burnDuration: 3
