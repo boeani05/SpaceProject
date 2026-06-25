@@ -7,13 +7,8 @@ public class VoidRangedBehaviour : MonoBehaviour
 
     void Awake()
     {
-        InitializeStats();
-        StartCoroutine(Suck());
-    }
-
-    private void InitializeStats()
-    {
         stats = gameObject.GetComponent<VoidRangedCombatStats>();
+        StartCoroutine(Suck());
     }
 
     private IEnumerator Suck()
