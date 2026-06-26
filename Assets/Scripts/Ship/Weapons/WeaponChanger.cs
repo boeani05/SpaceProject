@@ -20,6 +20,7 @@ public class WeaponChanger : MonoBehaviour
     {
         weapons = Array.ConvertAll(allWeapons, weapon => weapon as IWeapon);
     }
+
     public void Switch(int index)
     {
         currentWeaponIndex = index;
@@ -30,7 +31,7 @@ public class WeaponChanger : MonoBehaviour
 
     private void DeactivateAllWeapons()
     {
-        foreach(IWeapon weapon in weapons)
+        foreach (IWeapon weapon in weapons)
         {
             (weapon as MonoBehaviour)?.gameObject.SetActive(false);
         }

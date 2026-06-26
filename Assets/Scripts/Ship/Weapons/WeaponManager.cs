@@ -11,17 +11,7 @@ public class WeaponManager : MonoBehaviour
 
     void Awake()
     {
-        InitializeWeaponChanger();
-        InitializeWeaponMap();
-    }
-
-    private void InitializeWeaponChanger()
-    {
         weaponChanger = gameObject.GetComponent<WeaponChanger>();
-    }
-
-    private void InitializeWeaponMap()
-    {
         weaponMap = new Dictionary<KeyCode, int>
         {
             { KeyCode.Q, 0 },
@@ -34,20 +24,20 @@ public class WeaponManager : MonoBehaviour
 
     void Update()
     {
-        foreach(KeyCode key in weaponMap.Keys)
+        foreach (KeyCode key in weaponMap.Keys)
         {
-            if(Input.GetKeyDown(key))
+            if (Input.GetKeyDown(key))
             {
                 weaponChanger.Switch(weaponMap[key]);
             }
         }
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             weaponChanger.NextWeapon();
         }
 
-        if(Input.GetAxis("Mouse ScrollWheel") < 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
             weaponChanger.PreviousWeapon();
         }

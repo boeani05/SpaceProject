@@ -4,20 +4,12 @@ using UnityEngine;
 public class FireRangedBehaviour : MonoBehaviour
 {
     private FireRangedCombatStats combatStats;
+    private BurnStats burnStats;
 
     void Awake()
     {
-        InitializeCombatStats();
-        InitializeExplosion();
-    }
-
-    private void InitializeCombatStats()
-    {
         combatStats = gameObject.GetComponent<FireRangedCombatStats>();
-    }
-
-    private void InitializeExplosion()
-    {
+        burnStats = gameObject.GetComponent<BurnStats>();
         StartCoroutine(FireSequence());
     }
 
@@ -30,6 +22,6 @@ public class FireRangedBehaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(combatStats.GetDamage());
-        collision.gameObject.GetComponent<IBurnable>()?.ApplyBurn(combatStats.GetTickInterval(), combatStats.GetDamagePerTick(), combatStats.GetBurnDuration());
+        collision.gameObject.GetComponent<IBurnable>()?.ApplyBurn(burnStats.GetTickInterval(), burnStats.GetDamagePerTick(), burnStats.GetBurnDuration());
     }
 }

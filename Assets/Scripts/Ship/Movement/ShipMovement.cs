@@ -15,20 +15,21 @@ public class ShipMovement : MonoBehaviour
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    void Update() {
+    void Update()
+    {
         shipFlip.Flip(inputHandler.GetHorizontalInput(), inputHandler.GetVerticalInput());
-    } 
+    }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         Move();
-    } 
+    }
 
     private void Move()
     {
         rigidbody.AddForce(inputHandler.GetMovementDirection() * movementStats.GetAccelerationForce());
 
-        if(rigidbody.linearVelocity.magnitude > movementStats.GetMaxSpeed())
+        if (rigidbody.linearVelocity.magnitude > movementStats.GetMaxSpeed())
         {
             rigidbody.linearVelocity = rigidbody.linearVelocity.normalized * movementStats.GetMaxSpeed();
         }
