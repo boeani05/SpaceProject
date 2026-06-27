@@ -12,6 +12,7 @@ public abstract class BaseEnemyHealth : MonoBehaviour, IDamageable, IDeath, IBur
     private EnemyHitFlash hitFlash;
     private bool isBurning;
     private ElementVulnerability elementVulnerability;
+    private DamageNumbersSpawner damageNumbersSpawner;
 
     void Awake()
     {
@@ -19,14 +20,21 @@ public abstract class BaseEnemyHealth : MonoBehaviour, IDamageable, IDeath, IBur
         hitFlash = gameObject.GetComponent<EnemyHitFlash>();
         isBurning = false;
         elementVulnerability = gameObject.GetComponent<ElementVulnerability>();
+        damageNumbersSpawner = gameObject.GetComponent<DamageNumbersSpawner>();
     }
 
     public void ApplyDamage(float damage, Element element)
     {
         CameraShaker.Instance.Shake(hitShakeIntensity);
-        float effectiveDamage = elementVulnerability == null ? damage : elementVulnerability.GetEffectiveDamage(damage, element);
+
+        float damageMultipler = elementVulnerability == null ? 1 : elementVulnerability.GetDamageMultiplier(element);
+        float effectiveDamage = damage * damageMultipler;
+
         enemyStat.SetHealth(enemyStat.GetHealth() - effectiveDamage);
         hitFlash.Flash();
+
+        damageNumbersSpawner.ShowDamageNumber(effectiveDamage, damageMultipler);
+
         NotifyManagerOnDeath();
     }
 

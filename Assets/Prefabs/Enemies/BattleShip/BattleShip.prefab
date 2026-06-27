@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 1514209131932039333}
   - component: {fileID: 7397671435835009442}
   - component: {fileID: 2199031374099788182}
+  - component: {fileID: 2770332331777669068}
   m_Layer: 7
   m_Name: BattleShip
   m_TagString: Enemy
@@ -370,3 +371,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathParticles
   prefab: {fileID: 6190466505982906387, guid: 13846572865f0ff499e532c7b5077721, type: 3}
+--- !u!114 &2770332331777669068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329819722620168103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9396221b4967e284889b98e6e9f2a271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageNumbersSpawner
+  prefab: {fileID: 1387410218201468353, guid: 13daea89f49351e4a8db6084906c6a0b, type: 3}
+  offset: {x: 0.5, y: 1}
