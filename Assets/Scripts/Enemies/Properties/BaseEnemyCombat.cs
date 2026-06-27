@@ -21,6 +21,6 @@ public abstract class BaseEnemyCombat : MonoBehaviour
 
     protected virtual void DealDamage(GameObject target)
     {
-        target.gameObject.GetComponent<IDamageable>()?.ApplyDamage(damageSource.GetDamage());
+        target.gameObject.GetComponent<IDamageable>()?.ApplyDamage(damageSource.GetDamage(), Element.NONE);
     }
 }

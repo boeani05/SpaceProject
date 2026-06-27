@@ -61,7 +61,7 @@ public class LightningRangedBehaviour : MonoBehaviour
     {
         if (collision != null)
         {
-            collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(combatStats.GetDamage());
+            collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(combatStats.GetDamage(), Element.LIGHTNING);
 
             if (Random.Range(0f, 1f) < combatStats.GetParalyzeChance() / 100)
             {

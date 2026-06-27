@@ -4,7 +4,7 @@ public class ShipBehaviour : MonoBehaviour, IDamageable
 {
     [SerializeField] private float health;
 
-    public void ApplyDamage(float damage)
+    public void ApplyDamage(float damage, Element element)
     {
         health -= damage;
     }

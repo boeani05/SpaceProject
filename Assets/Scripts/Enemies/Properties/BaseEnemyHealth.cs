@@ -11,25 +11,28 @@ public abstract class BaseEnemyHealth : MonoBehaviour, IDamageable, IDeath, IBur
     private BaseEnemyHealthStats enemyStat;
     private EnemyHitFlash hitFlash;
     private bool isBurning;
+    private ElementVulnerability elementVulnerability;
 
     void Awake()
     {
         enemyStat = gameObject.GetComponent<BaseEnemyHealthStats>();
         hitFlash = gameObject.GetComponent<EnemyHitFlash>();
         isBurning = false;
+        elementVulnerability = gameObject.GetComponent<ElementVulnerability>();
     }
 
-    public void ApplyDamage(float damage)
+    public void ApplyDamage(float damage, Element element)
     {
         CameraShaker.Instance.Shake(hitShakeIntensity);
-        enemyStat.SetHealth(enemyStat.GetHealth() - damage);
+        float effectiveDamage = elementVulnerability == null ? damage : elementVulnerability.GetEffectiveDamage(damage, element);
+        enemyStat.SetHealth(enemyStat.GetHealth() - effectiveDamage);
         hitFlash.Flash();
         NotifyManagerOnDeath();
     }
 
     public void ApplyBurn(float tickInterval, float damagePerTick, float burnDuration)
     {
-        if(!isBurning)
+        if (!isBurning)
         {
             isBurning = true;
             StartCoroutine(Burn(tickInterval, damagePerTick, burnDuration));
@@ -38,9 +41,9 @@ public abstract class BaseEnemyHealth : MonoBehaviour, IDamageable, IDeath, IBur
 
     private IEnumerator Burn(float tickInterval, float damagePerTick, float burnDuration)
     {
-        for(int ticksLeft = (int) (burnDuration / tickInterval); ticksLeft > 0; ticksLeft--)
+        for (int ticksLeft = (int)(burnDuration / tickInterval); ticksLeft > 0; ticksLeft--)
         {
-            ApplyDamage(damagePerTick);
+            ApplyDamage(damagePerTick, Element.FIRE);
             yield return new WaitForSeconds(tickInterval);
         }
         isBurning = false;

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 3306593136442205040}
   - component: {fileID: 4918253095816427502}
   - component: {fileID: 4445947637056583537}
+  - component: {fileID: 1801127564272940547}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -356,3 +357,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathParticles
   prefab: {fileID: 6190466505982906387, guid: 13846572865f0ff499e532c7b5077721, type: 3}
+--- !u!114 &1801127564272940547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9081970479216051085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e696eff3fc3a4b93fe3703fcfba0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ElementVulnerability
+  elementMultipliers:
+  - multiplier: 2
+    element: 1
+  - multiplier: 0.5
+    element: 8

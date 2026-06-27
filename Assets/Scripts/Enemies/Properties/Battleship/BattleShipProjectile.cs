@@ -59,7 +59,7 @@ public class BattleShipProjectile : MonoBehaviour, IProjectile
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(projectileStats.GetDamage());
+        collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(projectileStats.GetDamage(), Element.NONE);
     }
 
     public void SetDirection(Vector2 direction)

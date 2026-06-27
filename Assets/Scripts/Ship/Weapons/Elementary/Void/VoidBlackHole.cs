@@ -13,6 +13,6 @@ public class VoidBlackHole : BaseBlackHole
 
     protected override void AffectEnemy(Collider2D collider)
     {
-        collider.gameObject.GetComponent<IDamageable>()?.ApplyDamage(stats.GetDamage() * Time.deltaTime);
+        collider.gameObject.GetComponent<IDamageable>()?.ApplyDamage(stats.GetDamage() * Time.deltaTime, Element.VOID);
     }
 }
