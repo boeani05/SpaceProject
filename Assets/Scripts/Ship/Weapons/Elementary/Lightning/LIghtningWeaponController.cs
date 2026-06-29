@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LightningWeaponController : ProjectileController, IElementaryWeapon
+public class LightningWeaponController : ProjectileController, IElementaryWeapon, IWeapon
 {
     void Update()
     {
@@ -20,4 +20,9 @@ public class LightningWeaponController : ProjectileController, IElementaryWeapon
 
     public void Ultimate() { }
     public void CombineWithElementaryWeapon(IElementaryWeapon elementaryWeapon) { }
+
+    public Element GetElement()
+    {
+        return Element.LIGHTNING;
+    }
 }

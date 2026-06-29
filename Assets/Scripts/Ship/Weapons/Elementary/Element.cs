@@ -8,5 +8,6 @@ public enum Element
     FIRE = 1,
     ICE = 2,
     LIGHTNING = 4,
-    VOID = 8
+    VOID = 8,
+    STANDARD = 16
 }

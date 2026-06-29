@@ -6,4 +6,6 @@ public interface IElementaryWeapon
     void Ranged();
     void Ultimate();
     void CombineWithElementaryWeapon(IElementaryWeapon elementaryWeapon);
+
+    Element GetElement();
 }

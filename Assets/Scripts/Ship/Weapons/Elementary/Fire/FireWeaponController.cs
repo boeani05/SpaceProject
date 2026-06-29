@@ -51,4 +51,9 @@ public class FireWeaponController : WeaponController, IElementaryWeapon, IWeapon
 
     public void Ultimate() { }
     public void CombineWithElementaryWeapon(IElementaryWeapon elementaryWeapon) { }
+
+    public Element GetElement()
+    {
+        return Element.FIRE;
+    }
 }

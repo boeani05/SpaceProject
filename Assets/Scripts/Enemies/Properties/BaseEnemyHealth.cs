@@ -25,6 +25,7 @@ public abstract class BaseEnemyHealth : MonoBehaviour, IDamageable, IDeath, IBur
 
     public void ApplyDamage(float damage, Element element)
     {
+
         CameraShaker.Instance.Shake(hitShakeIntensity);
 
         float damageMultipler = elementVulnerability == null ? 1 : elementVulnerability.GetDamageMultiplier(element);

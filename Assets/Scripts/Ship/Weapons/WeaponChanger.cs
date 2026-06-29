@@ -11,14 +11,19 @@ public class WeaponChanger : MonoBehaviour
 
     void Awake()
     {
-        InitializeWeapons();
+        weapons = Array.ConvertAll(allWeapons, weapon => weapon as IWeapon);
 
         currentWeaponIndex = 0;
     }
 
-    private void InitializeWeapons()
+    public IElementaryWeapon GetActiveWeapon()
     {
-        weapons = Array.ConvertAll(allWeapons, weapon => weapon as IWeapon);
+        return GetWeaponAt(currentWeaponIndex);
+    }
+
+    public IElementaryWeapon GetWeaponAt(int index)
+    {
+        return weapons[index] as IElementaryWeapon;
     }
 
     public void Switch(int index)
@@ -31,7 +36,7 @@ public class WeaponChanger : MonoBehaviour
 
     private void DeactivateAllWeapons()
     {
-        foreach (IWeapon weapon in weapons)
+        foreach(IWeapon weapon in weapons)
         {
             (weapon as MonoBehaviour)?.gameObject.SetActive(false);
         }
@@ -42,7 +47,7 @@ public class WeaponChanger : MonoBehaviour
         DeactivateAllWeapons();
 
         currentWeaponIndex = (currentWeaponIndex + 1) % weapons.Length;
-
+    
         (weapons[currentWeaponIndex] as MonoBehaviour)?.gameObject.SetActive(true);
     }
 

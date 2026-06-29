@@ -491,7 +491,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd15c0eb12a6054e863dc8aa2ea6d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VoidWeaponController
-  blackHolePrefab: {fileID: 9195968974579505132, guid: 8f2ef30a35af09c42b174c99e503c982, type: 3}
+  blackHolePrefab: {fileID: 8894370008320526217, guid: e0c3039eee0373e47b1f49362b86bf8b, type: 3}
+--- !u!114 &1148428625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148428621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365ae028698e2bf44bea65cc46d362e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VoidCombinedWeapons
+  elementCombinations:
+  - element: 1
+    combinationPrefab: {fileID: 9195968974579505132, guid: 8f2ef30a35af09c42b174c99e503c982, type: 3}
 --- !u!1001 &2619046950124324897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -661,6 +676,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4621015913649708368, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1148428623}
+    - targetCorrespondingSourceObject: {fileID: 4621015913649708368, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1148428625}
   m_SourcePrefab: {fileID: 100100000, guid: 9b03b77d42cb3a14798aae0082b1c02c, type: 3}
 --- !u!1 &2619046950124324898 stripped
 GameObject:

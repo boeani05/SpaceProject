@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IceWeaponController : ProjectileController, IElementaryWeapon
+public class IceWeaponController : ProjectileController, IElementaryWeapon, IWeapon
 {
     public void Melee()
     {
@@ -28,5 +28,10 @@ public class IceWeaponController : ProjectileController, IElementaryWeapon
     public void CombineWithElementaryWeapon(IElementaryWeapon elementaryWeapon)
     {
 
+    }
+
+    public Element GetElement()
+    {
+        return Element.ICE;
     }
 }

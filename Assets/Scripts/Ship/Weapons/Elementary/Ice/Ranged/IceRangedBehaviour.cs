@@ -7,11 +7,6 @@ public class IceRangedBehaviour : ProjectileBehaviour
     void Awake()
     {
         base.Awake();
-        InitializeCombatStats();
-    }
-
-    private void InitializeCombatStats()
-    {
         combatStats = gameObject.GetComponent<IceRangedCombatStats>();
     }
 
@@ -20,6 +15,11 @@ public class IceRangedBehaviour : ProjectileBehaviour
         base.OnTriggerEnter2D(collision);
 
         Slow(collision.gameObject.GetComponent<ISlowable>());
+    }
+
+    protected override Element GetProjectileElement()
+    {
+        return Element.ICE;
     }
 
     private void Slow(ISlowable enemy)

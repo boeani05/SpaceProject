@@ -10,34 +10,14 @@ public abstract class ProjectileBehaviour : MonoBehaviour, IProjectile
 
     protected void Awake()
     {
-        SetMainCamera();
-        SetRigidbody2D();
-        projectileStats = gameObject.GetComponent<IProjectileStats>();
-    }
-
-    private void SetMainCamera()
-    {
         mainCamera = Camera.main;
-    }
-
-    private void SetRigidbody2D()
-    {
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        projectileStats = gameObject.GetComponent<IProjectileStats>();
     }
 
     void FixedUpdate()
     {
-        ApplyMovementToProjectile();
-        DestroyIfOutOfBounds();
-    }
-
-    private void ApplyMovementToProjectile()
-    {
         rigidbody2D.linearVelocity = direction * projectileStats.GetProjectileSpeed();
-    }
-
-    private void DestroyIfOutOfBounds()
-    {
         if (DidProjectileLeaveScreen())
         {
             Destroy(gameObject);
@@ -54,11 +34,13 @@ public abstract class ProjectileBehaviour : MonoBehaviour, IProjectile
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(projectileStats.GetDamage(), Element.NONE);
+        collision.gameObject.GetComponent<IDamageable>()?.ApplyDamage(projectileStats.GetDamage(), GetProjectileElement());
     }
 
     public void SetDirection(Vector2 direction)
     {
         this.direction = direction;
     }
+
+    protected abstract Element GetProjectileElement();
 }
