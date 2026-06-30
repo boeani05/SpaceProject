@@ -841,7 +841,7 @@ PrefabInstance:
       addedObject: {fileID: 6043788116251128055}
     - targetCorrespondingSourceObject: {fileID: 3470159103809529729, guid: f27698f2f7de5f94caacf894c65e0823, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6043788116251128058}
+      addedObject: {fileID: 6043788116251128060}
   m_SourcePrefab: {fileID: 100100000, guid: f27698f2f7de5f94caacf894c65e0823, type: 3}
 --- !u!1 &6043788116251128054 stripped
 GameObject:
@@ -888,7 +888,7 @@ MonoBehaviour:
       enemyPool:
       - {fileID: 9081970479216051085, guid: 622de3c5b5cc31c419dae5e50499bb52, type: 3}
     bossPrefab: {fileID: 0}
---- !u!114 &6043788116251128058
+--- !u!114 &6043788116251128060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -897,7 +897,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6043788116251128054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92797880b6694754197c188eda9fb83a, type: 3}
+  m_Script: {fileID: 11500000, guid: 45586b3ba2143f34a83b1da4340e892d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathHandler
 --- !u!1660057539 &9223372036854775807

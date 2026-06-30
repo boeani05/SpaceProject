@@ -11,8 +11,8 @@ public class VoidBlackHole : BaseBlackHole
         stats = gameObject.GetComponent<VoidBlackHoleStats>();
     }
 
-    protected override void AffectEnemy(Collider2D collider)
+    protected override void ApplyTickEffect(Collider2D collider)
     {
-        collider.gameObject.GetComponent<IDamageable>()?.ApplyDamage(stats.GetDamage() * Time.deltaTime, Element.VOID);
+        collider.gameObject.GetComponent<IDamageable>()?.ApplyDamage(stats.GetDamage(), Element.VOID);
     }
 }

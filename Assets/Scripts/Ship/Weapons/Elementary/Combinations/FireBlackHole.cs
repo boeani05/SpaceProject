@@ -10,7 +10,7 @@ public class FireBlackHole : BaseBlackHole
         burnStats = gameObject.GetComponent<BurnStats>();
     }
 
-    protected override void AffectEnemy(Collider2D collider)
+    protected override void ApplyTickEffect(Collider2D collider)
     {
         collider.gameObject.GetComponent<IBurnable>()?.ApplyBurn(burnStats.GetTickInterval(), burnStats.GetDamagePerTick(), burnStats.GetBurnDuration());
     }

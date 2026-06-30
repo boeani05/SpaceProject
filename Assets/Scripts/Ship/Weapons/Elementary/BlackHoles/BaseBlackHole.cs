@@ -12,12 +12,13 @@ public abstract class BaseBlackHole : MonoBehaviour
 
     protected virtual void Start()
     {
-        StartCoroutine(Suck());
+        StartCoroutine(PullRoutine());
+        StartCoroutine(DamageRoutine());
     }
 
-    protected abstract void AffectEnemy(Collider2D collider);
+    protected abstract void ApplyTickEffect(Collider2D collider);
 
-    private IEnumerator Suck()
+    private IEnumerator PullRoutine()
     {
         float timePassed = 0f;
 
@@ -32,12 +33,27 @@ public abstract class BaseBlackHole : MonoBehaviour
                 {
                     rigidbody.AddForce((transform.position - collider.transform.position) * blackHoleStats.GetPullForce());
                 }
-                AffectEnemy(collider);
             }
             timePassed += Time.deltaTime;
 
             yield return null;
         }
         Destroy(gameObject);
+    }
+
+    private IEnumerator DamageRoutine()
+    {
+
+        while (true)
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blackHoleStats.GetRadiusOfPull());
+
+            foreach (Collider2D collider in colliders)
+            {
+                ApplyTickEffect(collider);
+            }
+
+            yield return new WaitForSeconds(blackHoleStats.GetTickInterval());
+        }
     }
 }

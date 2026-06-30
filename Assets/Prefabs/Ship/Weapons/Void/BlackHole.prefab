@@ -121,6 +121,7 @@ MonoBehaviour:
   radiusOfPull: 5
   duration: 3
   pullForce: 5
+  tickInterval: 0.5
 --- !u!114 &6868981322814524375
 MonoBehaviour:
   m_ObjectHideFlags: 0

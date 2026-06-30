@@ -9,6 +9,5 @@ public class WaveData
 
     public int GetEnemyCount() => enemyCount;
     public float GetDelayAfterWave() => delayAfterWave;
-
     public GameObject[] GetEnemyPool() => enemyPool;
 }

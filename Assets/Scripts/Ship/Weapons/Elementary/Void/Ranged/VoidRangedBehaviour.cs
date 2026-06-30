@@ -15,7 +15,7 @@ public class VoidRangedBehaviour : BaseBlackHole
         base.Awake();
     }
 
-    protected override void AffectEnemy(Collider2D collider)
+    protected override void ApplyTickEffect(Collider2D collider)
     {
         // collider.gameObject.GetComponent<IDamageable>()?.ApplyDamage()
     }
